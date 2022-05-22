@@ -12,7 +12,7 @@ if(isset($data['do_login'])){
 
   $auth = new Auth();
 
-  $user = R::findOne('m_authme', 'login = ?', [$data['login']]);
+  $user = R::findOne('m_authme', 'username = ?', [$data['login']]);
 
   if($auth->Login($data['login'], $data['password'])){
     $_SESSION['logged_user'] = $user;
